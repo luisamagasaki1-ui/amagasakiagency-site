@@ -30,7 +30,7 @@ const org = {
   alternateName: ["AMGSK", "Amagasaki Agency"],
   description: "Agência de marketing digital, tráfego pago e criação de sites para empresas que fazem um bom trabalho e ainda não são vistas.",
   slogan: "Acendemos marcas.",
-  logo: abs("favicon.svg"),
+  logo: abs("icon-512.png"),
   image: abs("og.png"),
   telephone: "+55 61 99344-0990",
   sameAs: ["https://www.instagram.com/amagasaki.agency/"],
@@ -84,13 +84,21 @@ async function selfHostFonts() {
   await fs.writeFile(path.join(dist, "fonts.css"), out);
 }
 
+// ícone da aba: .ico para navegadores antigos e para o Google, SVG nítido, PNG 48/96 e ícones de celular
+const ICONS = [
+  '<link rel="icon" href="/favicon.ico" sizes="48x48">',
+  '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
+  '<link rel="icon" href="/icon-96.png" type="image/png" sizes="96x96">',
+  '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
+  '<link rel="manifest" href="/site.webmanifest">',
+].join("\n");
+
 function headCommon(extra = "") {
   return [
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">',
     extra,
-    '<link rel="icon" href="favicon.svg" type="image/svg+xml">',
-    '<link rel="apple-touch-icon" href="apple-touch-icon.png">',
+    ICONS,
     '<link rel="preload" href="fonts.css" as="style">',
     '<link rel="stylesheet" href="fonts.css">',
   ].join("\n");
@@ -133,7 +141,7 @@ async function buildLegal(name) {
   html = html
     .replace(/<link rel="preconnect"[^>]*>\n/g, "")
     .replace(/<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/, '<link rel="stylesheet" href="fonts.css">')
-    .replace('<link rel="icon" href="favicon.svg" type="image/svg+xml">', '<link rel="icon" href="favicon.svg" type="image/svg+xml">\n<link rel="apple-touch-icon" href="apple-touch-icon.png">' + (SITE ? `\n<link rel="canonical" href="${SITE}/${name}">` : ""));
+    .replace('<link rel="icon" href="favicon.svg" type="image/svg+xml">', ICONS + (SITE ? `\n<link rel="canonical" href="${SITE}/${name}">` : ""));
   await fs.writeFile(path.join(dist, name), html);
 }
 
@@ -141,7 +149,7 @@ async function main() {
   await fs.rm(dist, { recursive: true, force: true });
   await fs.mkdir(path.join(dist, "assets"), { recursive: true });
   for (const f of ["escritorio.webp", "luis.jpg", "arthur.jpg", "vitor.jpg", "amagasaki-motion.mp4", "amagasaki-motion-poster.jpg"]) await fs.copyFile(path.join(here, "assets", f), path.join(dist, "assets", f));
-  for (const f of ["favicon.svg", "legal.css", "og.png", "apple-touch-icon.png"]) {
+  for (const f of ["favicon.svg", "favicon.ico", "icon-48.png", "icon-96.png", "icon-192.png", "icon-512.png", "apple-touch-icon.png", "site.webmanifest", "legal.css", "og.png"]) {
     try { await fs.copyFile(path.join(here, f), path.join(dist, f)); } catch { console.warn("faltando:", f); }
   }
   await selfHostFonts();

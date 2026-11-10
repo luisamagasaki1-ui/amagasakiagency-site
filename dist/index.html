@@ -344,8 +344,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .contato .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:start}
 .contato h2{font-size:clamp(2.6rem,5.6vw,4.8rem)}
 .contato .sub{color:inherit;opacity:.72}
-.contato .zap{margin-top:18px;font-size:1rem}
-.contato .zap a{font-weight:600;color:inherit;background-size:100% 1px}
 .switch{margin-top:44px;display:inline-flex;align-items:center;gap:18px;background:none;border:0;padding:0;color:inherit;font:500 1rem var(--body);cursor:pointer;text-align:left;-webkit-tap-highlight-color:transparent}
 .switch .plate{width:64px;height:96px;border-radius:12px;background:var(--paper-2);border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(0,0,0,.4);transition:background-color .6s ease,border-color .6s ease}
 .contato.off .switch .plate{background:#1D1A17;border-color:var(--night-line)}
@@ -432,6 +430,27 @@ footer .big{font-family:var(--display);font-weight:200;font-size:clamp(3rem,11vw
 footer .big em{font-style:normal;color:var(--red)}
 footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-top:56px;padding-top:24px;border-top:1px solid var(--night-line);font-size:.92rem;color:var(--night-ash)}
 footer .row nav{display:flex;flex-wrap:wrap;gap:24px}
+footer .row{align-items:center}
+
+/* Botões redondos de WhatsApp e Instagram: contorno; no hover, a cor de cada marca */
+.social{display:flex;gap:12px}
+.sbtn{--ring:color-mix(in srgb,currentColor 26%,transparent);position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:1px solid var(--ring);color:inherit;text-decoration:none;isolation:isolate;overflow:hidden;transition:transform .35s var(--ease-out),border-color .3s ease,color .3s ease,box-shadow .35s var(--ease-out);-webkit-tap-highlight-color:transparent}
+.sbtn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:scale(.4);opacity:0;transition:transform .45s var(--ease-out),opacity .3s ease}
+.sbtn.wa::before{background:#25D366}
+.sbtn.ig::before{background:radial-gradient(circle at 30% 110%,#FFD776 0%,#F77737 25%,#E1306C 50%,#C13584 72%,#5B51D8 100%)}
+.sbtn svg{width:24px;height:24px;transition:transform .45s var(--ease-out)}
+.sbtn .o{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}
+.sbtn .f{fill:currentColor}
+.sbtn:active{transform:scale(.95)}
+.sbtn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){
+  .sbtn:hover{transform:translateY(-2px);border-color:transparent;color:#fff;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+  .sbtn:hover::before{transform:scale(1);opacity:1}
+  .sbtn:hover svg{transform:scale(1.08)}
+}
+.direct{margin-top:28px;display:grid;gap:12px;justify-items:start}
+.direct p{font-size:.95rem;opacity:.8}
+.direct .handles{font-size:.85rem;opacity:.6;user-select:all}
 footer .mark{color:var(--night-ink)}
 footer .row.legal{margin-top:20px;font-size:.85rem}
 footer .row.legal nav{gap:20px}
@@ -683,7 +702,14 @@ footer .row.legal nav{gap:20px}
       <div>
         <h2 id="contato-t">Sua empresa merece ser vista.</h2>
         <p class="sub">Conte em duas linhas o que você faz e o que quer melhorar. A gente responde com um primeiro olhar sobre a sua marca.</p>
-        <p class="zap">Prefere ir direto? <a class="link" href="https://wa.me/5561993440990" target="_blank" rel="noopener">WhatsApp (61) 99344-0990</a> ou <a class="link" href="https://www.instagram.com/amagasaki.agency/" target="_blank" rel="noopener">@amagasaki.agency</a></p>
+        <div class="direct">
+          <p>Prefere ir direto?</p>
+          <div class="social">
+            <a class="sbtn wa" href="https://wa.me/5561993440990" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp (61) 99344-0990"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="o" d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.8l4.5-1.1A8.8 8.8 0 1 0 12 3.2z"/><path class="f" d="M9.1 7.9c-.3 0-.6.1-.8.4-.3.4-.8 1-.8 2.1s.8 2.3 1 2.5c.1.1 1.6 2.6 4 3.5 2 .8 2.4.6 2.8.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+            <a class="sbtn ig" href="https://www.instagram.com/amagasaki.agency/" target="_blank" rel="noopener" aria-label="Seguir @amagasaki.agency no Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="o" x="3.5" y="3.5" width="17" height="17" rx="5"/><circle class="o" cx="12" cy="12" r="4"/><circle class="f" cx="17.2" cy="6.8" r="1.1"/></svg></a>
+          </div>
+          <p class="handles">(61) 99344-0990 · @amagasaki.agency</p>
+        </div>
         <button class="switch" id="switch" type="button" aria-pressed="false">
           <span class="plate"><span class="toggle"></span></span>
           <span class="lbl"><b id="switch-b">Acender</b><span id="switch-s">Clique e veja a diferença</span></span>
@@ -720,7 +746,11 @@ footer .row.legal nav{gap:20px}
         <svg viewBox="0 0 230 40" aria-hidden="true"><path d="M4 38 L22 2 L40 38" fill="none" stroke="currentColor" stroke-width="4.2"/><line class="stroke" x1="1" y1="28" x2="44" y2="20"/><text x="50" y="38" font-family="Jost, Futura, sans-serif" font-size="51" font-weight="400" fill="currentColor" letter-spacing="1">MGSK</text></svg>
         <small>AGENCY</small>
       </a>
-      <nav aria-label="Rodapé"><a class="link" href="#servicos">Serviços</a><a class="link" href="#metodo">Como trabalhamos</a><a class="link" href="#equipe">Equipe</a><a class="link" href="https://wa.me/5561993440990" target="_blank" rel="noopener">WhatsApp (61) 99344-0990</a><a class="link" href="https://www.instagram.com/amagasaki.agency/" target="_blank" rel="noopener">Instagram @amagasaki.agency</a></nav>
+      <nav aria-label="Rodapé"><a class="link" href="#servicos">Serviços</a><a class="link" href="#metodo">Como trabalhamos</a><a class="link" href="#equipe">Equipe</a><a class="link" href="#contato">Contato</a></nav>
+      <div class="social">
+        <a class="sbtn wa" href="https://wa.me/5561993440990" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp (61) 99344-0990"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="o" d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.8l4.5-1.1A8.8 8.8 0 1 0 12 3.2z"/><path class="f" d="M9.1 7.9c-.3 0-.6.1-.8.4-.3.4-.8 1-.8 2.1s.8 2.3 1 2.5c.1.1 1.6 2.6 4 3.5 2 .8 2.4.6 2.8.6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4h-.5z"/></svg></a>
+        <a class="sbtn ig" href="https://www.instagram.com/amagasaki.agency/" target="_blank" rel="noopener" aria-label="Seguir @amagasaki.agency no Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="o" x="3.5" y="3.5" width="17" height="17" rx="5"/><circle class="o" cx="12" cy="12" r="4"/><circle class="f" cx="17.2" cy="6.8" r="1.1"/></svg></a>
+      </div>
       <a class="link totop-link" href="#topo">Voltar ao topo ↑</a>
     </div>
     <div class="row legal">

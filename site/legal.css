@@ -1,0 +1,45 @@
+/* Páginas legais da AMGSK: mesma marca, leitura confortável */
+:root{
+  --paper:#F4F1EA; --paper-2:#ECE7DD; --ink:#141210; --ink-2:#4A4540; --ash:#8C867E; --red:#C3122B;
+  --line:rgba(20,18,16,.14);
+  --display:"Jost","Futura","Century Gothic","Avenir Next",sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:var(--paper)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+a{color:var(--ink);text-underline-offset:3px}
+.top{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+.top .in,.doc{max-width:860px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.top .in{display:flex;justify-content:space-between;align-items:center;min-height:68px;gap:16px}
+.mark{display:inline-flex;flex-direction:column;gap:2px;text-decoration:none;color:inherit}
+.mark svg{height:20px;width:auto;overflow:visible}
+.mark .stroke{stroke:var(--red);stroke-width:5.5}
+.mark small{font-family:var(--display);font-size:.5rem;letter-spacing:.62em;padding-left:2px}
+.back{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-size:.92rem;transition:background-color .2s ease,color .2s ease}
+.back:hover{background:var(--ink);color:var(--paper)}
+.doc{padding-block:64px 96px}
+h1,h2{font-family:var(--display);font-weight:300;letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(2.4rem,6vw,3.8rem);margin:0 0 12px}
+h2{font-size:1.7rem;margin:56px 0 12px;scroll-margin-top:90px}
+h3{font-size:1.05rem;margin:28px 0 6px}
+.updated{color:var(--ash);font-size:.92rem;margin:0 0 32px}
+.lead{font-size:1.12rem;color:var(--ink-2)}
+p,li{max-width:68ch}
+ul{padding-left:22px}
+li{margin-bottom:6px}
+.toc{border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:32px 0;background:var(--paper-2)}
+.toc ol{margin:8px 0 0;padding-left:22px;columns:2 260px;column-gap:32px}
+.toc li{margin-bottom:4px}
+.tablewrap{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:var(--paper-2)}
+.box{border-left:3px solid var(--red);padding:4px 0 4px 16px;margin:20px 0;color:var(--ink-2)}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+footer{border-top:1px solid var(--line);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));font-size:.88rem;color:var(--ash)}
+footer .in{max-width:860px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:var(--ink-2)}

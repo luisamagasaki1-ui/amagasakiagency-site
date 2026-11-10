@@ -121,7 +121,7 @@ async function buildIndex() {
     '<meta property="og:image:alt" content="AMGSK Agency: acendemos marcas. Marketing digital, tráfego pago e criação de sites.">',
     SITE ? `<meta property="og:url" content="${SITE}/">` : "",
     '<meta name="twitter:card" content="summary_large_image">',
-    '<link rel="preload" href="assets/escritorio.webp" as="image" fetchpriority="high">',
+    '<link rel="preload" href="assets/amagasaki-motion-poster.jpg" as="image" fetchpriority="high">',
     `<script type="application/ld+json">${JSON.stringify(ld)}</script>`,
   ].filter(Boolean).join("\n");
   const html = `<!doctype html>\n<html lang="pt-BR">\n<head>\n${headCommon(seo)}\n${style}\n</head>\n<body>${body}\n</body>\n</html>\n`;
@@ -140,7 +140,7 @@ async function buildLegal(name) {
 async function main() {
   await fs.rm(dist, { recursive: true, force: true });
   await fs.mkdir(path.join(dist, "assets"), { recursive: true });
-  for (const f of ["escritorio.webp", "luis.jpg", "arthur.jpg", "vitor.jpg"]) await fs.copyFile(path.join(here, "assets", f), path.join(dist, "assets", f));
+  for (const f of ["escritorio.webp", "luis.jpg", "arthur.jpg", "vitor.jpg", "amagasaki-motion.mp4", "amagasaki-motion-poster.jpg"]) await fs.copyFile(path.join(here, "assets", f), path.join(dist, "assets", f));
   for (const f of ["favicon.svg", "legal.css", "og.png", "apple-touch-icon.png"]) {
     try { await fs.copyFile(path.join(here, f), path.join(dist, f)); } catch { console.warn("faltando:", f); }
   }

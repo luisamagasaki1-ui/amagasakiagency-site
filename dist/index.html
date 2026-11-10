@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="AMGSK Agency: acendemos marcas. Marketing digital, tráfego pago e criação de sites.">
 <meta property="og:url" content="https://amagasakiagency.com.br/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="assets/escritorio.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/amagasaki-motion-poster.jpg" as="image" fetchpriority="high">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://amagasakiagency.com.br/#agencia","name":"AMGSK Agency","alternateName":["AMGSK","Amagasaki Agency"],"description":"Agência de marketing digital, tráfego pago e criação de sites para empresas que fazem um bom trabalho e ainda não são vistas.","slogan":"Acendemos marcas.","logo":"https://amagasakiagency.com.br/favicon.svg","image":"https://amagasakiagency.com.br/og.png","telephone":"+55 61 99344-0990","sameAs":["https://www.instagram.com/amagasaki.agency/"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+55 61 99344-0990","availableLanguage":["pt-BR"],"url":"https://wa.me/5561993440990"}],"knowsAbout":["Marketing digital","Tráfego pago","Anúncios no Instagram","Anúncios no Facebook","Google Ads","Criação de sites","Landing pages","Estratégia de conteúdo"],"founder":[{"@type":"Person","name":"Luís","jobTitle":"CEO e Diretor Estratégico"},{"@type":"Person","name":"Arthur","jobTitle":"Diretor Comercial"},{"@type":"Person","name":"Vitor","jobTitle":"Diretor Audiovisual"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Serviços da AMGSK","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tráfego pago","description":"Anúncios no Instagram, no Facebook e no Google, mostrados para quem tem chance real de comprar.","provider":{"@id":"https://amagasakiagency.com.br/#agencia"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Marketing digital","description":"Estratégia, posicionamento e conteúdo com cara de marca para redes sociais.","provider":{"@id":"https://amagasakiagency.com.br/#agencia"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Criação de sites","description":"Sites e landing pages rápidos, bonitos e feitos para vender.","provider":{"@id":"https://amagasakiagency.com.br/#agencia"}}}]},"url":"https://amagasakiagency.com.br/"},{"@type":"WebSite","name":"AMGSK Agency","inLanguage":"pt-BR","publisher":{"@id":"https://amagasakiagency.com.br/#agencia"},"url":"https://amagasakiagency.com.br/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que a AMGSK faz?","acceptedAnswer":{"@type":"Answer","text":"A AMGSK Agency é uma agência de marketing digital. Trabalhamos com três serviços: tráfego pago (anúncios no Instagram, Facebook e Google), marketing digital (estratégia, posicionamento e conteúdo para redes sociais) e criação de sites e landing pages."}},{"@type":"Question","name":"Para que tipo de empresa vocês trabalham?","acceptedAnswer":{"@type":"Answer","text":"Para empresas que já fazem um bom trabalho e querem ser vistas por mais clientes: comércios, prestadores de serviço e negócios que dependem de atrair gente nova todo mês."}},{"@type":"Question","name":"Preciso contratar os três serviços?","acceptedAnswer":{"@type":"Answer","text":"Não. Cada serviço funciona sozinho. Depois do diagnóstico, indicamos o que faz mais sentido para o seu momento, e você escolhe."}},{"@type":"Question","name":"Quanto custa?","acceptedAnswer":{"@type":"Answer","text":"Depende do objetivo e do tamanho do projeto. Primeiro fazemos o diagnóstico da sua marca e depois enviamos uma proposta com escopo e valor, sem compromisso."}},{"@type":"Question","name":"Como faço para começar?","acceptedAnswer":{"@type":"Answer","text":"Chame a gente no WhatsApp (61) 99344-0990 ou preencha o formulário do site. Respondemos com um primeiro olhar sobre a sua marca e marcamos uma conversa."}}]}]}</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -104,9 +104,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .mobile-menu .btn{margin-top:24px;font-family:var(--body);font-size:1rem;border-bottom:0;justify-content:center}
 
 /* Hero */
-.hero{min-height:calc(100svh - 76px);display:flex;align-items:center;padding-block:32px 48px}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(32px,5vw,80px);align-items:center;width:100%}
-.hero h1{font-size:clamp(3rem,7.4vw,6rem);font-weight:300;letter-spacing:-.035em;line-height:.98}
+.hero{padding-block:clamp(28px,5vh,56px) clamp(56px,9vh,96px)}
+.hero .wrap{display:grid;gap:clamp(32px,5vh,56px);width:100%}
+.hero-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,80px);align-items:end}
+.hero h1{font-size:clamp(3rem,6.4vw,5.6rem);font-weight:300;letter-spacing:-.035em;line-height:.98}
+.hero-side .lede{margin-top:0}
+.hero-side .actions{margin-top:28px}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .ln > span{display:inline-block}
 .hero h1 em{font-style:normal;position:relative;display:inline-block}
@@ -116,11 +119,23 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero .fact{margin-top:40px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.9rem;color:var(--ink-2);padding-top:22px;border-top:1px solid var(--line);max-width:520px}
 .hero .fact span{display:inline-flex;align-items:center;gap:10px}
 .hero .fact span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
-.hero-photo{position:relative;aspect-ratio:1/1;max-height:calc(100svh - 150px);width:100%;overflow:hidden;border-radius:6px;background:var(--night);justify-self:end}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;transition:transform 1.2s var(--ease-out)}
-@media (hover:hover) and (pointer:fine){.hero-photo:hover img{transform:scale(1.025)}}
-.hero-photo .switch-tag{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:10px;background:rgba(12,11,10,.72);color:var(--night-ink);padding:10px 14px;border-radius:999px;font-size:.82rem;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.hero-photo .switch-tag i{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 0 4px rgba(255,216,163,.18)}
+/* Vídeo de apresentação na hero: roda sem som; o visitante liga o som ou pausa */
+.hero-film{position:relative;margin:0;aspect-ratio:16/9;max-width:100%;width:100%;overflow:hidden;border-radius:8px;background:#0b0b0b;box-shadow:0 40px 90px -50px rgba(12,11,10,.7)}
+.hero-film video{display:block;width:100%;height:100%;object-fit:cover}
+.film-ui{position:absolute;left:clamp(12px,2vw,20px);bottom:clamp(12px,2vw,20px);display:flex;gap:8px}
+.film-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:44px;height:44px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(12,11,10,.62);color:#fff;font:500 .88rem var(--body);cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background-color .2s ease,transform .16s var(--ease-out),border-color .2s ease;-webkit-tap-highlight-color:transparent}
+.film-btn:active{transform:scale(.96)}
+.film-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.film-btn .i-play{fill:currentColor;stroke:none}
+.film-btn .i-play,.hero-film.paused .film-btn .i-pause{display:none}
+.hero-film.paused .film-btn .i-play{display:block}
+.film-sound{padding:0 16px 0 14px}
+.film-sound .i-on,.film-sound[aria-pressed="true"] .i-off{display:none}
+.film-sound[aria-pressed="true"] .i-on{display:block}
+.film-sound[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+@media (hover:hover) and (pointer:fine){.film-btn:hover{background:rgba(12,11,10,.85);border-color:rgba(255,255,255,.35)}.film-sound[aria-pressed="true"]:hover{background:var(--red-deep)}}
+.film-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
+.film-bar i{display:block;height:100%;background:var(--red);transform-origin:left;transform:scaleX(0)}
 
 /* Entrada do hero: as luzes acendem (uma vez, no carregamento, só com a aba visível; sem JS a página já aparece pronta) */
 @media (prefers-reduced-motion:no-preference){
@@ -128,11 +143,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .enter .hero h1 .ln:nth-child(2) > span{animation-delay:.08s}
   .enter .hero h1 .ln:nth-child(3) > span{animation-delay:.16s}
   .enter .hero h1 em::after{animation:draw .7s var(--ease-io) .75s both}
-  .enter .hero .lede,.enter .hero .actions,.enter .hero .fact{animation:fadeup .9s var(--ease-out) both}
-  .enter .hero .lede{animation-delay:.35s}.enter .hero .actions{animation-delay:.45s}.enter .hero .fact{animation-delay:.55s}
-  .enter .hero-photo{animation:reveal 1.3s var(--ease-io) .1s both}
-  .enter .hero-photo img{animation:lightson 2.2s var(--ease-out) .6s both}
-  .enter .hero-photo .switch-tag{animation:fadeup .8s var(--ease-out) 1.6s both}
+  .enter .hero .lede,.enter .hero .actions{animation:fadeup .9s var(--ease-out) both}
+  .enter .hero .lede{animation-delay:.35s}.enter .hero .actions{animation-delay:.45s}
+  .enter .hero-film{animation:reveal 1.3s var(--ease-io) .25s both}
+  .enter .hero-film video{animation:lightson 2.2s var(--ease-out) .7s both}
+  .enter .film-ui{animation:fadeup .8s var(--ease-out) 1.5s both}
   .enter .nav .mark .stroke{animation:dash .8s var(--ease-io) .5s both}
 }
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
@@ -426,9 +441,10 @@ footer .row.legal nav{gap:20px}
   .nav ul{display:none}
   .menu-btn{display:inline-flex}
   .nav .right .btn{display:none}
-  .hero{min-height:auto;padding-block:24px 72px}
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-photo{aspect-ratio:4/3;max-height:none;justify-self:stretch}
+  .hero{padding-block:24px 64px}
+  .hero-top{grid-template-columns:1fr;gap:24px}
+  .hero-film{border-radius:6px}
+  .film-sound span{font-size:.82rem}
   .apagado{height:auto}
   .apagado .stage{position:relative;height:auto;grid-template-columns:1fr;padding-block:96px 0}
   .apagado .copy{padding-left:var(--gut);padding-right:var(--gutr)}
@@ -493,22 +509,36 @@ footer .row.legal nav{gap:20px}
 <main id="conteudo">
   <section class="hero" id="topo" data-enter>
     <div class="wrap">
-      <div>
+      <div class="hero-top">
         <h1>
           <span class="ln"><span>Sua empresa</span></span>
           <span class="ln"><span>é boa. Falta</span></span>
           <span class="ln"><span>ser <em>vista</em>.</span></span>
         </h1>
-        <p class="lede">A AMGSK é uma agência de marketing digital, tráfego pago e criação de sites. A gente ajuda empresas que fazem um bom trabalho, mas ainda não são notadas, a acender a própria marca.</p>
-        <div class="actions">
-          <a class="btn red" href="#contato">Quero minha marca acesa <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn ghost" href="#metodo">Ver como trabalhamos</a>
+        <div class="hero-side">
+          <p class="lede">A AMGSK é uma agência de marketing digital, tráfego pago e criação de sites. A gente ajuda empresas que fazem um bom trabalho, mas ainda não são notadas, a acender a própria marca.</p>
+          <div class="actions">
+            <a class="btn red" href="#contato">Quero minha marca acesa <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn ghost" href="#metodo">Ver como trabalhamos</a>
+          </div>
         </div>
-        <p class="fact"><span>Marketing digital</span><span>Tráfego pago</span><span>Criação de sites</span></p>
       </div>
-      <figure class="hero-photo" style="margin:0">
-        <img src="assets/escritorio.webp" alt="Recepção da AMGSK com a logo em letras metálicas na parede escura" width="1672" height="941" fetchpriority="high">
-        <span class="switch-tag"><i></i>Luzes acesas</span>
+      <figure class="hero-film" id="film-box">
+        <video id="film" autoplay muted loop playsinline preload="auto" poster="assets/amagasaki-motion-poster.jpg" width="1920" height="1080" aria-label="Vídeo de apresentação da AMGSK Agency: social media, foto e vídeo, tráfego pago e sites que convertem">
+          <source src="assets/amagasaki-motion.mp4" type="video/mp4">
+        </video>
+        <div class="film-ui">
+          <button class="film-btn" id="film-play" type="button" aria-label="Pausar vídeo">
+            <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg>
+            <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z"/></svg>
+          </button>
+          <button class="film-btn film-sound" id="film-sound" type="button" aria-pressed="false">
+            <svg class="i-off" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2zM11 6l4 4M15 6l-4 4"/></svg>
+            <svg class="i-on" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2zM11.5 5.5a3.5 3.5 0 010 5M13.5 3.5a6.3 6.3 0 010 9"/></svg>
+            <span id="film-sound-t">Ver com som</span>
+          </button>
+        </div>
+        <span class="film-bar" aria-hidden="true"><i id="film-progress"></i></span>
       </figure>
     </div>
   </section>
@@ -748,6 +778,35 @@ footer .row.legal nav{gap:20px}
   menuBtn.addEventListener("click", function(){ setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
   menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
   document.addEventListener("keydown", function(e){ if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
+
+  /* Vídeo da hero */
+  var film = document.getElementById("film"), filmBox = document.getElementById("film-box");
+  var playBtn = document.getElementById("film-play"), soundBtn = document.getElementById("film-sound");
+  var bar = document.getElementById("film-progress"), userPaused = false;
+  function syncPlay(){
+    var p = film.paused;
+    filmBox.classList.toggle("paused", p);
+    playBtn.setAttribute("aria-label", p ? "Reproduzir vídeo" : "Pausar vídeo");
+  }
+  film.addEventListener("play", syncPlay); film.addEventListener("pause", syncPlay);
+  film.addEventListener("timeupdate", function(){ if (film.duration) bar.style.transform = "scaleX(" + (film.currentTime / film.duration).toFixed(4) + ")"; });
+  playBtn.addEventListener("click", function(){
+    if (film.paused) { userPaused = false; film.play().catch(function(){}); } else { userPaused = true; film.pause(); }
+  });
+  soundBtn.addEventListener("click", function(){
+    var on = film.muted;
+    film.muted = !on;
+    if (on) { film.currentTime = 0; userPaused = false; film.play().catch(function(){}); } // com som, começa do início
+    soundBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    document.getElementById("film-sound-t").textContent = on ? "Som ligado" : "Ver com som";
+  });
+  if (reduce) { film.removeAttribute("autoplay"); film.pause(); userPaused = true; }
+  // fora da tela, o vídeo pausa; ao voltar, continua (se o visitante não pausou)
+  new IntersectionObserver(function(en){
+    if (en[0].isIntersecting) { if (!userPaused) film.play().catch(function(){}); }
+    else if (!film.paused) film.pause();
+  }, {threshold: .15}).observe(filmBox);
+  syncPlay();
 
   /* Apagado: feed + lanterna + rolagem */
   var dim = document.getElementById("feed-dim"), lit = document.getElementById("feed-lit");

@@ -149,6 +149,9 @@ async function main() {
   await buildLegal("privacidade.html");
   await buildLegal("termos.html");
 
+  // domínio próprio no GitHub Pages
+  if (SITE) await fs.writeFile(path.join(dist, "CNAME"), new URL(SITE).hostname + "\n");
+
   const pages = [["", "1.0"], ["privacidade.html", "0.3"], ["termos.html", "0.3"]];
   await fs.writeFile(path.join(dist, "robots.txt"),
     "User-agent: *\nAllow: /\n" + (SITE ? `\nSitemap: ${SITE}/sitemap.xml\n` : ""));
